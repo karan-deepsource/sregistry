@@ -123,7 +123,7 @@ def _download_container(container, request):
         return HttpResponseForbidden()
 
     # A remove build will store a metadata image url
-    elif "image" in container.metadata:
+    if "image" in container.metadata:
 
         if "google_build" in PLUGINS_ENABLED:
             from shub.plugins.google_build.utils import generate_signed_url
