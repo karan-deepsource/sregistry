@@ -48,7 +48,8 @@ class PGPKeyModelManager(models.Manager):
         post_save.connect(self.post_save, sender=self.model)
         post_delete.connect(self.post_delete, sender=self.model)
 
-    def post_save(self, sender, instance, created, **kwargs):
+    @staticmethod
+    def post_save(sender, instance, created, **kwargs):
         if created:
             data = instance.file.read()
             pgp = None
@@ -125,7 +126,8 @@ class PGPKeyModelManager(models.Manager):
                         keyid=keyid,
                     )
 
-    def post_delete(self, sender, instance, **kwargs):
+    @staticmethod
+    def post_delete(sender, instance, **kwargs):
         """\sa: self.post_save()"""
         instance.file.delete(False)
 
@@ -180,13 +182,16 @@ class PGPPacketModel(models.Model):
     class Meta:
         abstract = True
 
-    def is_public_key(self):
+    @staticmethod
+    def is_public_key():
         return False
 
-    def is_userid(self):
+    @staticmethod
+    def is_userid():
         return False
 
-    def is_signature(self):
+    @staticmethod
+    def is_signature():
         return False
 
 

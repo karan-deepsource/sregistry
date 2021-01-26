@@ -31,14 +31,16 @@ class RegistrySerializer(serializers.Serializer):
     id = serializers.CharField(max_length=256)
     url = serializers.CharField(max_length=256)
 
-    def list(self):
+    @staticmethod
+    def list():
         return Registry()
 
 
 class RegistryViewSet(viewsets.ViewSet):
     serializer_class = RegistrySerializer
 
-    def get_object(self):
+    @staticmethod
+    def get_object():
         return Registry()
 
     def get(self, request):
