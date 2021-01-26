@@ -36,7 +36,7 @@ def validate_credentials(user, context=None):
     context: an optional context object to append to
     """
     if context is None:
-        context = dict()
+        context = {}
 
     # Right now we have github for repos and google for storage
     credentials = [
