@@ -248,7 +248,7 @@ class Team(models.Model):
             return True
 
         # Edit permission to owners given so
-        elif request.user in self.owners.all():
+        if request.user in self.owners.all():
             return True
 
         return False
