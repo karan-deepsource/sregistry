@@ -263,9 +263,6 @@ def generate_container_metadata(container):
 
     data = {
         "deleted": False,  # 2019-03-15T19:02:24.015Z
-        "createdAt": container.add_date.strftime(
-            formatString
-        ),  # No idea what their format is...
         "createdBy": str(container.collection.owners.first().id),
         "createdAt": container.add_date.strftime(
             formatString
