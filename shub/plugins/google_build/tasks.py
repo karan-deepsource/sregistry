@@ -146,7 +146,7 @@ def build_previous_commits(collection, branch):
                 continue
 
             # Only going to build updated recipes
-            elif record["status"] in ["added", "modified", "renamed"]:
+            if record["status"] in ["added", "modified", "renamed"]:
 
                 # Supports building from Singularity recipes
                 if re.search("Singularity", filename):
