@@ -18,7 +18,7 @@ django-rq
 django-taggit
 django-taggit-templatetags
 django-user-agents
-django==2.2.13
+django==2.2.16
 djangorestframework==3.10.3
 google
 google-api-python-client
@@ -28,7 +28,7 @@ markdown
 numexpr
 oauth2client==3.0
 Pillow
-PyYAML==5.1
+PyYAML==5.2
 psycopg2-binary
 pygments
 python3-saml
