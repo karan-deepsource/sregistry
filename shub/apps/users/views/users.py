@@ -112,7 +112,7 @@ def delete_account(request):
     from shub.apps.main.views.collections import _delete_collection
 
     if "google_build" in PLUGINS_ENABLED:
-        from shub.plugins.google_build.views import _delete_collection
+        pass
 
     if not request.user or request.user.is_anonymous:
         messages.info(request, "This action is not prohibited.")
