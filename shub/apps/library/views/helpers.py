@@ -68,7 +68,6 @@ def get_collection_downloads(collection):
     downloads = 0
     for container in collection.containers.all():
         downloads += get_container_downloads(container)
-    return
 
 
 def get_container_downloads(container):
